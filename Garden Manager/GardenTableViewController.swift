@@ -11,7 +11,9 @@ import UIKit
 class GardenTableViewController: UITableViewController {
     
     // MARK: properties
-    let gardens = ["ur mum's garden", "also ur mum's garden"]
+    var gardens = [Garden]()
+    // VERY IMPORTANT NEVER REMOVE!11!1!!!1!
+    let jamesysFavouriteEmojis😩 = ["😩", "🍆", "🙈", "💦", "😉", "👅", "🔥", "💯", "🍑"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,14 @@ class GardenTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        // some fake gardens 😫💦🙈🍆
+        let 💯 = jamesysFavouriteEmojis😩.count - 1
+        for _ in 0 ... 10 {
+            let g = Garden()
+            g.name = "DAVE " + jamesysFavouriteEmojis😩[Int(arc4random_uniform(UInt32(💯)) + 1)]
+            g.size = Double(Int(arc4random_uniform(90001) + 1))
+            gardens.append(g)
+        }
         
     }
 
@@ -43,21 +53,17 @@ class GardenTableViewController: UITableViewController {
     // MAKE A COMMENT
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            // fetch cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "gardenCell")
-                // reference garden
-                let garden = gardens[(indexPath as NSIndexPath).row]
-                
-                // divider formatting
-                cell!.preservesSuperviewLayoutMargins = false
-                cell!.separatorInset = UIEdgeInsets.zero
-                cell!.layoutMargins = UIEdgeInsets.zero
-                
-                cell!.textLabel?.text = garden
-                
-                // return the cell
-                return cell!
-            
+        // fetch cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gardenCell")! as UITableViewCell
+        // reference garden
+        let garden = gardens[(indexPath as NSIndexPath).row]
+        
+        cell.textLabel?.text = garden.name
+        cell.detailTextLabel?.text = String(garden.size) + " daves"
+        
+        // return the cell
+        return cell
+        
         
     }
 
