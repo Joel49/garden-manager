@@ -25,7 +25,7 @@ class GardenTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // some fake gardens 😫💦🙈🍆
-        let 💯 = jamesysFavouriteEmojis😩.count
+        let 💯 = jamesysFavouriteEmojis😩.count - 1
         for _ in 0 ... 10 {
             let g = Garden()
             g.name = "DAVE " + jamesysFavouriteEmojis😩[Int(arc4random_uniform(UInt32(💯)) + 1)]
