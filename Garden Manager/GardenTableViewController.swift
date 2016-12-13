@@ -35,22 +35,14 @@ class GardenTableViewController: UITableViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
+    // MARK: table methods
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    // MARK: table methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gardens.count
     }
-    
-    // MAKE A COMMENT
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // fetch cell
@@ -63,19 +55,7 @@ class GardenTableViewController: UITableViewController {
         
         // return the cell
         return cell
-        
-        
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
