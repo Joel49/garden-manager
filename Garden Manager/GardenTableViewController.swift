@@ -10,7 +10,6 @@ import UIKit
 import RealmSwift
 import Foundation
 
-
 class GardenTableViewController: UITableViewController {
     
     // MARK: properties
@@ -33,8 +32,6 @@ class GardenTableViewController: UITableViewController {
         //print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 
-    
-    
     @IBAction func addGarden(_ sender: UIBarButtonItem) {
         
         let addGardenAlert = UIAlertController(title: "New Garden", message: "Enter a name for this garden.", preferredStyle: UIAlertControllerStyle.alert)
@@ -72,8 +69,6 @@ class GardenTableViewController: UITableViewController {
         self.present(addGardenAlert, animated: true, completion: nil)
     }
     
-    
-    
     // MARK: table methods
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -82,8 +77,6 @@ class GardenTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gardens.count
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // fetch cell
@@ -107,7 +100,6 @@ class GardenTableViewController: UITableViewController {
     }
     */
 
-    
     // enable garden deleting
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -128,7 +120,6 @@ class GardenTableViewController: UITableViewController {
         }
     }
     
-    
     // This function is called before the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -143,7 +134,6 @@ class GardenTableViewController: UITableViewController {
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        
     }
 
     /*
