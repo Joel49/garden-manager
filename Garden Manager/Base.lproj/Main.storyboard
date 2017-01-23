@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D0W-kw-2aN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D0W-kw-2aN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Plant Table View Controller-->
         <scene sceneID="Nwc-Td-iMT">
             <objects>
-                <tableViewController id="o8U-nF-3dQ" sceneMemberID="viewController">
+                <tableViewController id="o8U-nF-3dQ" customClass="PlantTableViewController" customModule="Garden_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZC0-O9-2gd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="2628" y="1059"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarViewController" customModule="Garden_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -191,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="-1326" y="453"/>
         </scene>
-        <!--Garden Table View Controller-->
+        <!--My Gardens-->
         <scene sceneID="At9-vk-Cdj">
             <objects>
                 <tableViewController id="lQh-y1-BYk" customClass="GardenTableViewController" customModule="Garden_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -200,7 +200,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gardenCell" textLabel="LvO-0w-FEL" detailTextLabel="oPY-eI-KWp" style="IBUITableViewCellStyleSubtitle" id="Y8z-O3-66i">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gardenCell" textLabel="LvO-0w-FEL" style="IBUITableViewCellStyleDefault" id="Y8z-O3-66i">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y8z-O3-66i" id="jkA-ys-gPL">
@@ -208,23 +208,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LvO-0w-FEL">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oPY-eI-KWp">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="i5M-fO-PJj"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="gardenSegue" id="i5M-fO-PJj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -233,7 +226,13 @@
                             <outlet property="delegate" destination="lQh-y1-BYk" id="gne-ZD-Z4m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Vfx-by-Gm4"/>
+                    <navigationItem key="navigationItem" title="My Gardens" id="Vfx-by-Gm4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="oiP-jc-weJ">
+                            <connections>
+                                <action selector="addGarden:" destination="lQh-y1-BYk" id="qS5-na-3Bt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJT-Si-LFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
