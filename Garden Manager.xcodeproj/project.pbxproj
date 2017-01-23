@@ -93,10 +93,10 @@
 		740E001A1E007E9A00FE9F1C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7475542F1E364FEA001D6BB6 /* RemindersTableViewController.swift */,
-				747554311E36500D001D6BB6 /* RecommendationsTableViewController.swift */,
 				5DB2E16D1E004802009CD958 /* GardenTableViewController.swift */,
 				5D216C7C1E36345E000C809F /* PlantsTableViewController.swift */,
+				7475542F1E364FEA001D6BB6 /* RemindersTableViewController.swift */,
+				747554311E36500D001D6BB6 /* RecommendationsTableViewController.swift */,
 				5D216C7A1E361474000C809F /* TabBarViewController.swift */,
 			);
 			name = ViewControllers;

@@ -21,8 +21,13 @@ class RemindersTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        // reference navbar
+        let TB = self.tabBarController as! TabBarViewController
+        print(TB.currentGarden)
+        
         // set the navbar title
-        self.tabBarController?.title = "Reminders"
+        TB.title = "Plants"
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -23,8 +23,13 @@ class PlantsTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        // reference navbar
+        let TB = self.tabBarController as! TabBarViewController
+        print(TB.currentGarden)
+        
         // set the navbar title
-        self.tabBarController?.title = "Plants"
+        TB.title = "Plants"
+        
     }
 
     override func didReceiveMemoryWarning() {
