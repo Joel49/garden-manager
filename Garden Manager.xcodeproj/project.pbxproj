@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		5D12B5631DF9A3ED0046BA6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D12B5621DF9A3ED0046BA6C /* Assets.xcassets */; };
 		5D216C7B1E361474000C809F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D216C7A1E361474000C809F /* TabBarViewController.swift */; };
-		5D216C7D1E36345E000C809F /* PlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D216C7C1E36345E000C809F /* PlantTableViewController.swift */; };
+		5D216C7D1E36345E000C809F /* PlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D216C7C1E36345E000C809F /* PlantsTableViewController.swift */; };
 		5D959C061DF97A8A00D4385A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D959C051DF97A8A00D4385A /* AppDelegate.swift */; };
 		5D959C0D1DF97A8A00D4385A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D959C0B1DF97A8A00D4385A /* Main.storyboard */; };
 		5D959C121DF97A8A00D4385A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D959C101DF97A8A00D4385A /* LaunchScreen.storyboard */; };
 		5DB2E16E1E004802009CD958 /* GardenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2E16D1E004802009CD958 /* GardenTableViewController.swift */; };
 		60D49C67FCCDA9C716C3AC92 /* Pods_Garden_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B35667326D638C51C19B49 /* Pods_Garden_Manager.framework */; };
 		740E00181E007DB400FE9F1C /* Garden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740E00171E007DB400FE9F1C /* Garden.swift */; };
+		747554301E364FEA001D6BB6 /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7475542F1E364FEA001D6BB6 /* RemindersTableViewController.swift */; };
+		747554321E36500D001D6BB6 /* RecommendationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747554311E36500D001D6BB6 /* RecommendationsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3964ED9FAC1F478D94D3EB2E /* Pods-Garden Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Garden Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Garden Manager/Pods-Garden Manager.debug.xcconfig"; sourceTree = "<group>"; };
 		5D12B5621DF9A3ED0046BA6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D216C7A1E361474000C809F /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		5D216C7C1E36345E000C809F /* PlantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantTableViewController.swift; sourceTree = "<group>"; };
+		5D216C7C1E36345E000C809F /* PlantsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsTableViewController.swift; sourceTree = "<group>"; };
 		5D959C021DF97A8A00D4385A /* Garden Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garden Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D959C051DF97A8A00D4385A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D959C0C1DF97A8A00D4385A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		5D959C131DF97A8A00D4385A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DB2E16D1E004802009CD958 /* GardenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenTableViewController.swift; sourceTree = "<group>"; };
 		740E00171E007DB400FE9F1C /* Garden.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Garden.swift; path = "Garden Manager/Models/Garden.swift"; sourceTree = "<group>"; };
+		7475542F1E364FEA001D6BB6 /* RemindersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTableViewController.swift; sourceTree = "<group>"; };
+		747554311E36500D001D6BB6 /* RecommendationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationsTableViewController.swift; sourceTree = "<group>"; };
 		B6B35667326D638C51C19B49 /* Pods_Garden_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Garden_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A1A1D93B6FDD478DC4EBD4 /* Pods-Garden Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Garden Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Garden Manager/Pods-Garden Manager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,8 +93,10 @@
 		740E001A1E007E9A00FE9F1C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7475542F1E364FEA001D6BB6 /* RemindersTableViewController.swift */,
+				747554311E36500D001D6BB6 /* RecommendationsTableViewController.swift */,
 				5DB2E16D1E004802009CD958 /* GardenTableViewController.swift */,
-				5D216C7C1E36345E000C809F /* PlantTableViewController.swift */,
+				5D216C7C1E36345E000C809F /* PlantsTableViewController.swift */,
 				5D216C7A1E361474000C809F /* TabBarViewController.swift */,
 			);
 			name = ViewControllers;
@@ -246,11 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D216C7D1E36345E000C809F /* PlantTableViewController.swift in Sources */,
+				5D216C7D1E36345E000C809F /* PlantsTableViewController.swift in Sources */,
+				747554301E364FEA001D6BB6 /* RemindersTableViewController.swift in Sources */,
 				5D216C7B1E361474000C809F /* TabBarViewController.swift in Sources */,
 				740E00181E007DB400FE9F1C /* Garden.swift in Sources */,
 				5D959C061DF97A8A00D4385A /* AppDelegate.swift in Sources */,
 				5DB2E16E1E004802009CD958 /* GardenTableViewController.swift in Sources */,
+				747554321E36500D001D6BB6 /* RecommendationsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
