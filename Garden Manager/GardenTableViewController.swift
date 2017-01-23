@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import RealmSwift
+import Foundation
+
 
 class GardenTableViewController: UITableViewController {
     
     // MARK: properties
     var gardens = [Garden]()
-    // VERY IMPORTANT NEVER REMOVE!11!1!!!1!
-    let jamesysFavouriteEmojis😩 = ["😩", "🍆", "🙈", "💦", "😉", "👅", "🔥", "💯", "🍑"]
+    let realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,19 +24,56 @@ class GardenTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        // some fake gardens 😫💦🙈🍆
-        let 💯 = jamesysFavouriteEmojis😩.count - 1
-        for _ in 0 ... 10 {
-            let g = Garden()
-            g.name = "DAVE " + jamesysFavouriteEmojis😩[Int(arc4random_uniform(UInt32(💯)) + 1)]
-            g.size = Double(Int(arc4random_uniform(90001) + 1))
-            gardens.append(g)
-        }
+        // load Gardens from Realm
+        gardens = Array(realm.objects(Garden.self))
         
+        // print realm path to console
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 
+    
+    
+    @IBAction func addGarden(_ sender: UIBarButtonItem) {
+        
+        let addGardenAlert = UIAlertController(title: "New Garden", message: "Enter a name for this garden.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        addGardenAlert.addTextField { (textField) in
+            
+        }
+        
+        addGardenAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
+            
+            let newGardenName = addGardenAlert.textFields![0] as UITextField
+            
+            // enter to local array
+            let newGarden = Garden()
+            newGarden.name = newGardenName.text!
+            newGarden.id = UUID().uuidString
+            self.gardens.append(newGarden)
+            
+            // now add to Realm
+            try! self.realm.write {
+                self.realm.add(newGarden)
+            }
+            
+            // refresh table
+            self.tableView.reloadData()
+            
+        }))
+        
+        addGardenAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        self.present(addGardenAlert, animated: true, completion: nil)
+    }
+    
+    
+    
     // MARK: table methods
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -44,14 +83,17 @@ class GardenTableViewController: UITableViewController {
         return gardens.count
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // fetch cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "gardenCell")! as UITableViewCell
+        
         // reference garden
-        let garden = gardens[(indexPath as NSIndexPath).row]
+        
+        let garden = gardens[(indexPath).row]
         
         cell.textLabel?.text = garden.name
-        cell.detailTextLabel?.text = String(garden.size) + " daves"
         
         // return the cell
         return cell
@@ -65,24 +107,44 @@ class GardenTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
+    
+    // enable garden deleting
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
 
-    /*
+            // delete the row from realm
+            try! self.realm.write {
+                self.realm.delete(gardens[(indexPath).row])
+            }
+            
+            // delete from local array
+            self.gardens.remove(at: (indexPath).row)
+            
+            // refresh table
+            self.tableView.reloadData()
+            
+        //} else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    
+    // This function is called before the segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // get a reference to the second view controller
+        let secondViewController = segue.destination as! TabBarViewController
+        
+        // set a variable in the second view controller with the data to pass
+        let indexPath = self.tableView.indexPathForSelectedRow!
+        
+        secondViewController.currentGarden = gardens[(indexPath).row]
+    }
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        
     }
-    */
 
     /*
     // Override to support conditional rearranging of the table view.

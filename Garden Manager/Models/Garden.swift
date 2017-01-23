@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Garden {
+class Garden: Object {
     // MARK: properties
-    var name: String = ""
-    var size: Double = 0
+    dynamic var id: String = ""
+    dynamic var name: String = ""
 }
