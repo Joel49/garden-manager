@@ -21,9 +21,6 @@ class GardenTableViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         // load Gardens from Realm
         gardens = Array(realm.objects(Garden.self))
@@ -32,6 +29,10 @@ class GardenTableViewController: UITableViewController {
         //print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 
+    @IBAction func cancel(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func addGarden(_ sender: UIBarButtonItem) {
         
         let addGardenAlert = UIAlertController(title: "New Garden", message: "Enter a name for this garden.", preferredStyle: UIAlertControllerStyle.alert)
@@ -62,7 +63,7 @@ class GardenTableViewController: UITableViewController {
         
         addGardenAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
             
-            self.dismiss(animated: true, completion: nil)
+            addGardenAlert.dismiss(animated: true, completion: nil)
             
         }))
         
@@ -91,7 +92,17 @@ class GardenTableViewController: UITableViewController {
         // return the cell
         return cell
     }
-
+    
+    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // pass on to the tabbar
+        
+        // close the modal
+        self.navigationController?.popViewController(animated: true)
+    }
+    */
+ 
+ 
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

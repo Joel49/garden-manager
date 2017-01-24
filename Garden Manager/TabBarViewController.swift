@@ -14,10 +14,14 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.title = "Plants" // this is the default tab - doing it here too so there is no delay.
-        self.navigationItem.prompt = currentGarden!.name
+        
+        // display modalahy modal
+        present(GardenTableViewController(), animated: true, completion: nil)
+        
+        
+        // Do any additional setup after loading the view
+        
+        //self.navigationItem.prompt = currentGarden!.name
     }
 
     override func didReceiveMemoryWarning() {
