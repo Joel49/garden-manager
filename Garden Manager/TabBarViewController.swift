@@ -15,10 +15,6 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // display modalahy modal
-        present(GardenTableViewController(), animated: true, completion: nil)
-        
-        
         // Do any additional setup after loading the view
         
         //self.navigationItem.prompt = currentGarden!.name

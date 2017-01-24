@@ -13,7 +13,12 @@ class PlantsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // display modalahy modal
+        let VC = GardenTableViewController()
+        let NC = UINavigationController(rootViewController: VC)
+        self.tabBarController?.present(NC, animated: true, completion: {
+            print("Garden picker modally presented")
+        })
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
