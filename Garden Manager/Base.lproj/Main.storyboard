@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D0W-kw-2aN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Plants Table View Controller-->
+        <!--Plants-->
         <scene sceneID="Nwc-Td-iMT">
             <objects>
                 <tableViewController id="o8U-nF-3dQ" customClass="PlantsTableViewController" customModule="Garden_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,13 +32,24 @@
                             <outlet property="delegate" destination="o8U-nF-3dQ" id="BrF-6e-3dV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nkw-B3-Ahl"/>
+                    <navigationItem key="navigationItem" title="Plants" id="nkw-B3-Ahl">
+                        <barButtonItem key="leftBarButtonItem" title="Gardens" id="ITf-sZ-nC5">
+                            <connections>
+                                <segue destination="D0W-kw-2aN" kind="presentation" id="6oO-XY-wex"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dbu-em-rtY">
+                            <connections>
+                                <segue destination="nf4-yy-yPY" kind="presentation" id="8Pk-2v-rW1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkl-JY-dqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2628" y="-358"/>
         </scene>
-        <!--Add Plant Table View Controller-->
+        <!--Add Plant-->
         <scene sceneID="8kS-jv-efT">
             <objects>
                 <tableViewController id="29p-s4-Gnk" customClass="AddPlantTableViewController" customModule="Garden_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +62,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8GY-tV-BPO" id="n81-18-GfH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -61,13 +72,20 @@
                             <outlet property="delegate" destination="29p-s4-Gnk" id="oeN-Xg-HVm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BYW-3Y-JQj"/>
+                    <navigationItem key="navigationItem" title="Add Plant" id="BYW-3Y-JQj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oeq-ET-uSF">
+                            <connections>
+                                <action selector="close:" destination="29p-s4-Gnk" id="HkG-GX-Anb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="dqH-Pl-rpy"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szK-lH-dle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4672.8000000000002" y="-364.7676161919041"/>
+            <point key="canvasLocation" x="4578" y="-358"/>
         </scene>
-        <!--Reminders Table View Controller-->
+        <!--Reminders-->
         <scene sceneID="rSp-Xz-IUp">
             <objects>
                 <tableViewController id="3X6-rl-8E8" customClass="RemindersTableViewController" customModule="Garden_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,13 +108,19 @@
                             <outlet property="delegate" destination="3X6-rl-8E8" id="avY-4c-b9I"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="S93-mk-Z8t"/>
+                    <navigationItem key="navigationItem" title="Reminders" id="S93-mk-Z8t">
+                        <barButtonItem key="leftBarButtonItem" title="Gardens" id="Oua-71-pOt">
+                            <connections>
+                                <segue destination="D0W-kw-2aN" kind="presentation" id="UmU-fa-Tio"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MDF-R3-SwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2628" y="359"/>
         </scene>
-        <!--Recommendations Table View Controller-->
+        <!--Recommendations-->
         <scene sceneID="atU-3G-dNG">
             <objects>
                 <tableViewController id="LB9-Ug-WjW" customClass="RecommendationsTableViewController" customModule="Garden_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,7 +143,13 @@
                             <outlet property="delegate" destination="LB9-Ug-WjW" id="JdS-aD-4oi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="OLh-bI-nC6"/>
+                    <navigationItem key="navigationItem" title="Recommendations" id="OLh-bI-nC6">
+                        <barButtonItem key="leftBarButtonItem" title="Gardens" id="Bg6-jH-H5H">
+                            <connections>
+                                <segue destination="D0W-kw-2aN" kind="presentation" id="4hH-bu-pRD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cM-jK-Gmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,7 +173,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="453"/>
+            <point key="canvasLocation" x="775" y="359"/>
         </scene>
         <!--Recommendations-->
         <scene sceneID="0PV-fh-eqI">
@@ -218,7 +248,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbI-g4-QHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1326" y="453"/>
+            <point key="canvasLocation" x="3630" y="359"/>
         </scene>
         <!--Gardens-->
         <scene sceneID="At9-vk-Cdj">
@@ -245,9 +275,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" identifier="gardenSegue" id="i5M-fO-PJj"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -256,7 +283,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Gardens" id="Vfx-by-Gm4">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="oiP-jc-weJ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ki3-Fg-lAw">
+                            <connections>
+                                <action selector="cancel:" destination="lQh-y1-BYk" id="99u-K2-XzY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oiP-jc-weJ">
                             <connections>
                                 <action selector="addGarden:" destination="lQh-y1-BYk" id="qS5-na-3Bt"/>
                             </connections>
@@ -265,7 +297,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJT-Si-LFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-255" y="453"/>
+            <point key="canvasLocation" x="4577" y="359"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bwp-U9-vOW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nf4-yy-yPY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T0N-qU-m7X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="29p-s4-Gnk" kind="relationship" relationship="rootViewController" id="X7S-Ln-h0d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jFR-B1-txz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3630" y="-358"/>
         </scene>
     </scenes>
     <resources>
@@ -273,4 +323,7 @@
         <image name="second" width="30" height="30"/>
         <image name="third" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4hH-bu-pRD"/>
+    </inferredMetricsTieBreakers>
 </document>

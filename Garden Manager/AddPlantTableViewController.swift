@@ -24,6 +24,10 @@ class AddPlantTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func close(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 
     // MARK: - Table view data source
 
