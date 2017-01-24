@@ -17,6 +17,7 @@ class TabBarViewController: UITabBarController {
 
         // Do any additional setup after loading the view.
         self.title = "Plants" // this is the default tab - doing it here too so there is no delay.
+        self.navigationItem.prompt = currentGarden!.name
     }
 
     override func didReceiveMemoryWarning() {
