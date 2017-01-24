@@ -10,6 +10,7 @@
 		5D12B5631DF9A3ED0046BA6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D12B5621DF9A3ED0046BA6C /* Assets.xcassets */; };
 		5D216C7B1E361474000C809F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D216C7A1E361474000C809F /* TabBarViewController.swift */; };
 		5D216C7D1E36345E000C809F /* PlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D216C7C1E36345E000C809F /* PlantsTableViewController.swift */; };
+		5D3E60FB1E375E1E00BB192A /* AddPlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E60FA1E375E1E00BB192A /* AddPlantTableViewController.swift */; };
 		5D959C061DF97A8A00D4385A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D959C051DF97A8A00D4385A /* AppDelegate.swift */; };
 		5D959C0D1DF97A8A00D4385A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D959C0B1DF97A8A00D4385A /* Main.storyboard */; };
 		5D959C121DF97A8A00D4385A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D959C101DF97A8A00D4385A /* LaunchScreen.storyboard */; };
@@ -25,6 +26,7 @@
 		5D12B5621DF9A3ED0046BA6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D216C7A1E361474000C809F /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		5D216C7C1E36345E000C809F /* PlantsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsTableViewController.swift; sourceTree = "<group>"; };
+		5D3E60FA1E375E1E00BB192A /* AddPlantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlantTableViewController.swift; sourceTree = "<group>"; };
 		5D959C021DF97A8A00D4385A /* Garden Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garden Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D959C051DF97A8A00D4385A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D959C0C1DF97A8A00D4385A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				7475542F1E364FEA001D6BB6 /* RemindersTableViewController.swift */,
 				747554311E36500D001D6BB6 /* RecommendationsTableViewController.swift */,
 				5D216C7A1E361474000C809F /* TabBarViewController.swift */,
+				5D3E60FA1E375E1E00BB192A /* AddPlantTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D216C7D1E36345E000C809F /* PlantsTableViewController.swift in Sources */,
+				5D3E60FB1E375E1E00BB192A /* AddPlantTableViewController.swift in Sources */,
 				747554301E364FEA001D6BB6 /* RemindersTableViewController.swift in Sources */,
 				5D216C7B1E361474000C809F /* TabBarViewController.swift in Sources */,
 				740E00181E007DB400FE9F1C /* Garden.swift in Sources */,

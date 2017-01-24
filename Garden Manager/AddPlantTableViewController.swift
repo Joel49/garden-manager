@@ -1,66 +1,24 @@
 //
-//  PlantTableViewController.swift
+//  AddPlantTableViewController.swift
 //  Garden Manager
 //
-//  Created by Joel Powell on 23/01/2017.
+//  Created by Joel Powell on 24/01/2017.
 //  Copyright © 2017 Joel Powell. All rights reserved.
 //
 
 import UIKit
 
-class PlantsTableViewController: UITableViewController {
+class AddPlantTableViewController: UITableViewController {
 
-    var prompt: String?
-    var TB: TabBarViewController?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        // reference navbar
-        TB = self.tabBarController as! TabBarViewController?
-
-        // set the navbar title
-        TB!.title = "Plants"
-        
-        let addPlantButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(PlantsTableViewController.addButtonPressed))
-        
-        TB!.navigationItem.rightBarButtonItem = addPlantButton
-        
-        
-    }
-    
-    func addButtonPressed() {
-        
-        // init modal vc
-        let VC = AddPlantTableViewController()
-        
-        // init nav controller
-        let navigationController = UINavigationController(rootViewController: VC)
-        // buttons
-        navigationController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonPressed))
-        
-        // present modally
-        self.present(navigationController, animated: true) {
-            print("modal presented")
-        }
-        
-    }
-    
-    func cancelButtonPressed() {
-        
-        TB!.navigationController?.popViewController(animated: true)
-        
-    }
-    
-        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
